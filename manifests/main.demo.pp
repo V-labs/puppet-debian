@@ -1,4 +1,5 @@
 # mandatory
+class { 'bootstrap': }
 class { 'misc::misc': }
 
 # PHP5
@@ -23,6 +24,6 @@ class { 'php5::mysql': }
 # Git
 class { 'git::git': }
 git::config {'config':
-    name => "Benjamin Dulau",
-    email => "benjamin.dulau@anonymation.com",
+    name => "Valentin Ferriere",
+    email => "valentin.ferriere@gmail.com",
 }
