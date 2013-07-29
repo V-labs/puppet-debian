@@ -9,7 +9,7 @@ class php5::php54dotdeb {
     }
 
     exec { "dotDebKeys":
-        command => "wget -q -O - http://www.dotdeb.org/dotdeb.gpg | sudo apt-key add -",
+        command => "wget -q -O - http://www.dotdeb.org/dotdeb.gpg | apt-key add -",
         path => ["/bin", "/usr/bin"],
         notify => Exec["aptGetUpdate"],
         unless => "apt-key list | grep dotdeb"
