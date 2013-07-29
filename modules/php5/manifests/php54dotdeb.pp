@@ -15,7 +15,7 @@ class php5::php54dotdeb {
         unless => "apt-key list | grep dotdeb"
     }
 
-    package { ["php5-apc", "php5-xhprof"]:
+    package { ["php5-apc"]:
         ensure => latest,
         require => Package["php5-cli"],
     }

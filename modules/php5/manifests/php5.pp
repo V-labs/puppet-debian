@@ -4,7 +4,7 @@ class php5::php5 {
         require => Exec["aptGetUpdate"],
     }
 
-    package { ["php5-xdebug", "php5-intl", "php5-sqlite", "php5-curl"]:
+    package { ["php5-intl", "php5-sqlite", "php5-curl", "php5-gd"]:
         ensure => latest,
         require => Package["php5-cli"],
     }

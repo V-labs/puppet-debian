@@ -1,6 +1,6 @@
 class php5::composer {
-    exec { "composerPhar":
-        cwd => "/vagrant",
+    exec { "composerInstall":
+        cwd => "/root",
         command => "curl -s http://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer",
         path => ["/bin", "/usr/bin"],
         creates => "/usr/local/bin/composer",
