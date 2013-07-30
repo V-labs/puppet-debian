@@ -13,7 +13,7 @@ class apache2::apache2 {
     service { "apache2":
         ensure => running,
         require => Package["apache2-mpm-prefork"],
-        subscribe => File["httpd.conf", "mod_rewrite"]
+        subscribe => File["mod_rewrite"]
     }
 
     file { "mod_rewrite":
