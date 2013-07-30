@@ -9,7 +9,7 @@ class mongodb::mongodb {
     }
 
     exec { "10genKeys":
-        command => "sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10",
+        command => "apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10",
         path => ["/bin", "/usr/bin"],
         notify => Exec["aptGetUpdate"],
         unless => "apt-key list | grep 10gen"
