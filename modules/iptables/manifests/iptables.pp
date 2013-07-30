@@ -1,5 +1,6 @@
 class iptables::iptables {
   file { "firewall":
+    ensure => present,
     path    => "/etc/init.d/firewall",
     owner   => 'root',
     group   => 'root',
@@ -8,8 +9,11 @@ class iptables::iptables {
     notify  => Exec["updateLaunch"],
   }
 
-  exec { "updateLaunch":
-      command => "update-rc.d firewall defaults",
-      path => ["/bin", "/usr/bin", "/usr/sbin"]
-  }
+  service { "iptables":
+        ensure => running,
+        enable => true,
+        require => [
+            File['/etc/init.d/firewall']
+        ]
+    }
 }

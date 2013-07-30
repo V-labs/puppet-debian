@@ -3,4 +3,9 @@ class misc::misc {
         ensure => latest,
         require => Exec["aptGetUpdate"],
     }
+
+    package { ["htop"]:
+        ensure => latest,
+        require => Exec["aptGetUpdate"],
+    }
 }
