@@ -1,4 +1,4 @@
-define iptables::iptables {
+class iptables::iptables {
   file { "firewall":
     path    => "/etc/init.d/firewall",
     owner   => 'root',
