@@ -1,5 +1,15 @@
 #!/bin/sh
 
+### BEGIN INIT INFO
+# Provides: firewall
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Apply firewall configuration
+# Description: Apply firewall configuration.
+### END INIT INFO
+
 IPT=/sbin/iptables
 
 $IPT -F INPUT
