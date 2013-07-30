@@ -9,7 +9,6 @@ class iptables::iptables {
   }
 
   service { "iptables":
-        ensure => running,
         enable => true,
         require => [
             File['/etc/init.d/firewall']
