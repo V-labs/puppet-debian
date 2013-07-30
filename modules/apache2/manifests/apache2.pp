@@ -16,13 +16,6 @@ class apache2::apache2 {
         subscribe => File["httpd.conf", "mod_rewrite"]
     }
 
-    file { "httpd.conf":
-        path => "/etc/apache2/httpd.conf",
-        ensure => file,
-        content => template("apache2/httpd.conf"),
-        require => Package["apache2-mpm-prefork"]
-    }
-
     file { "mod_rewrite":
         path => "/etc/apache2/mods-enabled/rewrite.load",
         ensure => "link",

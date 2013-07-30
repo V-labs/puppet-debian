@@ -1,0 +1,12 @@
+#!/bin/sh
+
+IPT=/sbin/iptables
+
+$IPT -F INPUT
+$IPT -P INPUT DROP
+$IPT -A INPUT -i lo -p all -j ACCEPT
+$IPT -A INPUT -i eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+$IPT -A INPUT -i eth0 -p icmp -j ACCEPT
+$IPT -A INPUT -i eth0 -p tcp --dport 22 -j ACCEPT
+$IPT -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
+$IPT -A INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
