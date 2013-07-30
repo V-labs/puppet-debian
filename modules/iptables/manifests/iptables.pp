@@ -5,8 +5,7 @@ class iptables::iptables {
     owner   => 'root',
     group   => 'root',
     mode    => '755',
-    content => template('iptables/default.erb'),
-    notify  => Exec["updateLaunch"],
+    content => template('iptables/default.erb')
   }
 
   service { "iptables":
