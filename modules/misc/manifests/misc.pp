@@ -8,4 +8,9 @@ class misc::misc {
         ensure => latest,
         require => Exec["aptGetUpdate"],
     }
+
+    package { ["libwww-perl"]:
+        ensure => latest,
+        require => Exec["aptGetUpdate"],
+    }
 }

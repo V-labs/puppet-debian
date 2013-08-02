@@ -26,3 +26,6 @@ class { 'mongodb::mongodb-10gen': }
 
 # IPTables
 class { 'iptables::iptables': }
+
+# Munin
+class { 'munin::munin': }
