@@ -13,4 +13,9 @@ class misc::misc {
         ensure => latest,
         require => Exec["aptGetUpdate"],
     }
+
+    package { ["acl"]:
+        ensure => latest,
+        require => Exec["aptGetUpdate"],
+    } 
 }
